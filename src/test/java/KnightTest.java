@@ -1,4 +1,5 @@
 import Enums.ArmorType;
+import Enums.ShieldType;
 import Enums.Treasure;
 import Enums.WeaponType;
 import Players.Knight;
@@ -87,4 +88,25 @@ public class KnightTest {
         knight.addTreasure(Treasure.GEM);
         assertEquals(Treasure.GEM, knight.getTreasures().get(0));
     }
+
+    @Test
+    public void canDropWeapon() {
+        knight.dropWeapon();
+        assertEquals(null, knight.getWeapon());
+    }
+
+    @Test
+    public void canGetNewWeapon() {
+        knight.dropWeapon();
+        knight.pickUpWeapon(WeaponType.GREATAXE);
+        assertEquals(WeaponType.GREATAXE, knight.getWeapon());
+    }
+
+    @Test
+    public void canGetNewShield() {
+        knight.pickUpShield(ShieldType.MITHRIL);
+        assertEquals(ShieldType.MITHRIL, knight.getShield());
+    }
+
+
 }
