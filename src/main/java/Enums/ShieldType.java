@@ -1,6 +1,8 @@
 package Enums;
 
-public enum ShieldType {
+import Interfaces.ILootable;
+
+public enum ShieldType implements ILootable {
     WOODEN(1, "Wooden"),
     STEEL(3, "Steel"),
     MITHRIL(5, "Mithril");

@@ -1,6 +1,8 @@
 package Enums;
 
-public enum WeaponType {
+import Interfaces.ILootable;
+
+public enum WeaponType implements ILootable {
     SHORTSWORD(6, 1, "Shortsword"),
     MACE(10, 1, "Mace"),
     GREATAXE(15, 2, "Greataxe");

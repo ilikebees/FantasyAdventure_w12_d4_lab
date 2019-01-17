@@ -1,6 +1,8 @@
 package Enums;
 
-public enum Treasure {
+import Interfaces.ILootable;
+
+public enum Treasure implements ILootable {
 
     GEM(20, "Gem"),
     GOLD(10, "Gold Piece"),

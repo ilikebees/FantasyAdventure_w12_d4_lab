@@ -1,6 +1,8 @@
 package Enums;
 
-public enum ArmorType {
+import Interfaces.ILootable;
+
+public enum ArmorType implements ILootable {
 
     LEATHER(1, "Leather"),
     STEEL(3, "Steel"),

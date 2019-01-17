@@ -1,7 +1,9 @@
 package Players;
 
+import Enemies.Enemy;
 import Enums.Treasure;
 import Interfaces.IAttackable;
+import Interfaces.ILootable;
 
 import java.util.ArrayList;
 
@@ -49,4 +51,14 @@ public abstract class Player implements IAttackable {
     public void addTreasure(Treasure treasure) {
         this.treasures.add(treasure);
     }
+
+    public void lootEnemy(Enemy baddy){
+        if (baddy.getDead()) {
+            ILootable loot = baddy.giveUpLoot();
+            if (loot instanceof Treasure) {
+                this.treasures.add((Treasure) loot);
+            }
+        }
+    }
+
 }
