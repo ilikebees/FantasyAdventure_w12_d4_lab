@@ -1,4 +1,5 @@
 import Enums.ArmorType;
+import Enums.Treasure;
 import Enums.WeaponType;
 import Players.Knight;
 import org.junit.Before;
@@ -49,7 +50,7 @@ public class KnightTest {
 
     @Test
     public void hasNoTreasure() {
-        assertEquals(0, knight.getTreasure().size());
+        assertEquals(0, knight.getTreasures().size());
     }
 
     @Test
@@ -59,7 +60,7 @@ public class KnightTest {
     }
 
     @Test
-    public void canLGainHealth() {
+    public void canGainHealth() {
         knight.loseHealth(10);
         assertEquals(40, knight.getHealth());
         knight.gainHealth(5);
@@ -76,8 +77,14 @@ public class KnightTest {
     }
 
     @Test
-    public void canAttack() {
+    public void canAttackAndBeDamaged() {
         knight.attack(knight2);
         assertEquals(45, knight2.getHealth());
+    }
+
+    @Test
+    public void canGetTreasure() {
+        knight.addTreasure(Treasure.GEM);
+        assertEquals(Treasure.GEM, knight.getTreasures().get(0));
     }
 }

@@ -1,10 +1,11 @@
 package Players;
 
 import Enums.Treasure;
+import Interfaces.IAttackable;
 
 import java.util.ArrayList;
 
-public abstract class Player {
+public abstract class Player implements IAttackable {
 
     protected String name;
     protected int maxHealth;
@@ -43,5 +44,9 @@ public abstract class Player {
     public void loseHealth(int amount) {
         this.health -= amount;
         //TODO: Die if 0 or less health.
+    }
+
+    public void addTreasure(Treasure treasure) {
+        this.treasures.add(treasure);
     }
 }
